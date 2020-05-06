@@ -26,26 +26,27 @@ Follow these steps and you will be well on your way
 
 ##### 4. Add the following tasks to tasks.ini; if tasks.ini does not exist, create it
 
-  [ScriptScheduler]
-  enabled=true
-  tasksfile=tasks.ini
+	  [Task]
+	  triggerOnTime=true
+	  timeValue=
+	  script=factiontop.cs
 
-  [Task]
-  triggerOnTime=true
-  timeValue=
-  script=factiontop.cs
+	  [Task]
+	  triggerOnTime=true
+	  timeValue=
+	  script=factiontop.cs
 
-  [Task]
-  triggerOnTime=true
-  timeValue=
-  script=factiontop.cs
+	  [Task]
+	  triggerOnTime=true
+	  timeValue=
+	  script=factiontop.cs
 
 ##### 5. Make sure to set the reboot times correctly! I recommend setting the time to 15 minutes after a reboot. i.e. if reboot for your realm is at 16:45 make sure to set the time to 17:00. Time MUST be in 24hrs format
 
-  [Task]
-  triggerOnTime=true
-  timeValue=17:00
-  script=factiontop.cs
+ 	 [Task]
+	  triggerOnTime=true
+	  timeValue=17:00
+	  script=factiontop.cs
 
 ##### 6. Create a Discord Webhook for your server. Server Settings > Webhooks > Create Webhook. Set the channel to the desired channel and copy the webhook url
 
