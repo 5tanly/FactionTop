@@ -26,10 +26,9 @@ Follow these steps and you will be well on your way
 
 ##### 4. Add the following tasks to tasks.ini; if tasks.ini does not exist, create it
 
-  [Task]
-  triggerOnTime=true
-  timeValue=
-  script=factiontop.cs
+  [ScriptScheduler]
+  enabled=true
+  tasksfile=tasks.ini
 
   [Task]
   triggerOnTime=true
