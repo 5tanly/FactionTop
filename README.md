@@ -52,7 +52,7 @@ Follow these steps and you will be well on your way
 
 ##### 7. Enable and make sure your webhook url is set properly in factiontop.ini. Make sure there are no spaces before or after the equals sign
 
-	[FactrionTop]
+	[FactionTop]
 	enabled=true
 	webhook=PASTE_WEBHOOK_URL_HERE
 
