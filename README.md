@@ -26,27 +26,27 @@ Follow these steps and you will be well on your way
 
 ##### 4. Add the following tasks to tasks.ini; if tasks.ini does not exist, create it
 
-	  [Task]
-	  triggerOnTime=true
-	  timeValue=
-	  script=factiontop.cs
-
-	  [Task]
-	  triggerOnTime=true
-	  timeValue=
-	  script=factiontop.cs
-
-	  [Task]
-	  triggerOnTime=true
-	  timeValue=
-	  script=factiontop.cs
+	[Task]
+	triggerOnTime=true
+	timeValue=
+	script=factiontop.cs
+	
+	[Task]
+	triggerOnTime=true
+	timeValue=
+	script=factiontop.cs
+	
+	[Task]
+	triggerOnTime=true
+	timeValue=
+	script=factiontop.cs
 
 ##### 5. Make sure to set the reboot times correctly! I recommend setting the time to 15 minutes after a reboot. i.e. if reboot for your realm is at 16:45 make sure to set the time to 17:00. Time MUST be in 24hrs format
 
- 	 [Task]
-	  triggerOnTime=true
-	  timeValue=17:00
-	  script=factiontop.cs
+ 	[Task]
+	triggerOnTime=true
+	timeValue=17:00
+	script=factiontop.cs
 
 ##### 6. Create a Discord Webhook for your server. Server Settings > Webhooks > Create Webhook. Set the channel to the desired channel and copy the webhook url
 
@@ -56,4 +56,5 @@ Follow these steps and you will be well on your way
 	enabled=true
 	webhook=PASTE_WEBHOOK_URL_HERE
 
-##### 8. If your account isn't in a realm at the time you specified, it will not post faction top data in your discord. If you want to manually do so, enter the realm and type "/script factiontop.cs"
+## Troubleshooting
+If your account isn't in a realm at the time you specified, it will not post faction top data in your discord. If you want to manually do so, enter the realm and type "/script factiontop.cs" and it will collect the data and post it to your discord webhook
