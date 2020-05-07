@@ -57,4 +57,11 @@ Follow these steps and you will be well on your way
 	webhook=PASTE_WEBHOOK_URL_HERE
 
 ## Troubleshooting
-If your account isn't in a realm at the time you specified, it will not post faction top data in your discord. If you want to manually do so, enter the realm and type "/script factiontop.cs" and it will collect the data and post it to your discord webhook
+###### I set everything up correctly but my discord channel didnt get a message!
+If your account isn't in a realm at the time you specified, it will not post faction top data in your discord. If you want to manually do so, enter the realm and type "/script factiontop.cs" and it will collect the data and post it to your discord webhook.
+
+###### Why am I getting multiple messages in my server every reboot?
+The script has no way of knowing how many other scripts are also running and sending to the same discord channel. The advantage of this script is on some realms that are very full you will have a higher chance of getting at least one account online that will get faction top for you. If you have 12 accounts in the realm running this script, you might get 12 messages in discord after a reboot.
+
+## Screenshots
+<img src="images/preview.png">
