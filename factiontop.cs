@@ -20,6 +20,7 @@ public class FactionTop : ChatBot{
     string[] Lines = File.ReadAllLines(@"factiontop.ini");
     enabled = Lines[1].Remove(0,8).ToLower();
     webhook = Lines[2].Remove(0,8);
+    
     //Get advanced settings from factiontop.ini
     formatting = Lines[5].Remove(0,11);
     firPlace = Lines[6].Remove(0,2);
@@ -57,14 +58,19 @@ public class FactionTop : ChatBot{
         //Parse incoming text if it is faction top information
         String[] jsonlist = jsontext.Split();
         String[] strlist = text.Split();
+
+        //Text data
         string rank = strlist[2];
         string name = strlist[3];
         string value = strlist[5];
         string change = strlist[7];
+        //Hoverinfo data
+
         string leader = jsonlist[8];
         string svalue = jsonlist[16];
         string splaced = jsonlist[22];
         string sstored = jsonlist[28];
+
         string factionData = string.Empty;
 
         //Strip unimportant data to clean up the information
@@ -122,6 +128,7 @@ public class FactionTop : ChatBot{
       }
       var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
       LogToConsole(httpResponse);
+
       //Reset and unload script
       UnloadBot();
     }
