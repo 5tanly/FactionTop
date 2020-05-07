@@ -70,7 +70,7 @@ Below is a list of all available variables and an example of what it would look 
 | ------ | ------ |
 | {rank} | #1 |
 | {name} | NemoOP |
-| {Leader} | defier_ |
+| {leader} | defier_ |
 | {value} |  $27,559,029,653 |
 | {change} | ▲116.8% |
 | {spawners} | $25,988,156,093 |
