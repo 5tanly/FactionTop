@@ -20,7 +20,7 @@ public class FactionTop : ChatBot{
     string[] Lines = File.ReadAllLines(@"factiontop.ini");
     enabled = Lines[1].Remove(0,8).ToLower();
     webhook = Lines[2].Remove(0,8);
-    
+
     //Get advanced settings from factiontop.ini
     formatting = Lines[5].Remove(0,11);
     firPlace = Lines[6].Remove(0,2);
@@ -65,11 +65,12 @@ public class FactionTop : ChatBot{
         string value = strlist[5];
         string change = strlist[7];
         //Hoverinfo data
-
         string leader = jsonlist[8];
         string svalue = jsonlist[16];
         string splaced = jsonlist[22];
         string sstored = jsonlist[28];
+
+        string factionuuid = jsonlist[1];
 
         string factionData = string.Empty;
 
@@ -79,6 +80,7 @@ public class FactionTop : ChatBot{
         splaced = splaced.Remove(splaced.Length - 4).Remove(0,2);
         sstored = sstored.Remove(sstored.Length - 13).Remove(0,2);
         change = change.Remove(change.Length - 1);
+        factionuuid = factionuuid.Split('"')[0];
 
         //Add formatting to faction top data
         factionData = formatting;
@@ -90,6 +92,7 @@ public class FactionTop : ChatBot{
         factionData = factionData.Replace("{spawners}",svalue);
         factionData = factionData.Replace("{placed}",splaced);
         factionData = factionData.Replace("{stored}",sstored);
+        factionData = factionData.Replace("{uuid}",factionuuid);
         factionData = factionData + "\\n\\n";
 
         //Replace #1 #2 #3 with emoji specified in factiontop.ini

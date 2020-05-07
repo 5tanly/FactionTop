@@ -28,12 +28,12 @@ Follow these steps and you will be well on your way
 	triggerOnTime=true
 	timeValue=
 	script=factiontop.cs
-	
+
 	[Task]
 	triggerOnTime=true
 	timeValue=
 	script=factiontop.cs
-	
+
 	[Task]
 	triggerOnTime=true
 	timeValue=
@@ -76,6 +76,7 @@ Below is a list of all available variables and an example of what it would look 
 | {spawners} | $25,988,156,093 |
 | {placed} | 74,386 |
 | {stored} | 1,593 |
+| {uuid} | 01424db3-9bfd-4d8d-bd87-299d409c5c24 |
 
 ##### Emojis
 You are able to edit the emojis shown for first, second, and third place
