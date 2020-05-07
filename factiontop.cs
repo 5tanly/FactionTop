@@ -61,27 +61,32 @@ public class FactionTop : ChatBot{
         string name = strlist[3];
         string value = strlist[5];
         string change = strlist[7];
+        string leader = jsonlist[8];
         string svalue = jsonlist[16];
         string splaced = jsonlist[22];
         string sstored = jsonlist[28];
         string factionData = string.Empty;
+
         //Strip unimportant data to clean up the information
+        leader = leader.Remove(leader.Length - 6).Remove(0,2);
         svalue = svalue.Remove(svalue.Length - 4).Remove(0,2);
         splaced = splaced.Remove(splaced.Length - 4).Remove(0,2);
         sstored = sstored.Remove(sstored.Length - 13).Remove(0,2);
         change = change.Remove(change.Length - 1);
+
         //Add formatting to faction top data
-        // factionData = "> " + rank + " - **" + name + "** `" + value + "` +" + change + "\\n> **Spawner:** `" + svalue + "` - " + splaced + "/" + sstored + "\\n\\n";
         factionData = formatting;
         factionData = factionData.Replace("{rank}",rank);
         factionData = factionData.Replace("{name}",name);
+        factionData = factionData.Replace("{leader}",leader);
         factionData = factionData.Replace("{value}",value);
         factionData = factionData.Replace("{change}","{+}" + change);
         factionData = factionData.Replace("{spawners}",svalue);
         factionData = factionData.Replace("{placed}",splaced);
         factionData = factionData.Replace("{stored}",sstored);
         factionData = factionData + "\\n\\n";
-        //Replace #1 #2 #3 with medal emoji
+
+        //Replace #1 #2 #3 with emoji specified in factiontop.ini
         _factionTop[i] = factionData.Replace("#1 ", firPlace).Replace("#2 ", secPlace).Replace("#3 ", thiPlace).Replace("{+}-", "▼").Replace("{+}", "▲");
         _factionIndex = _factionIndex + 1;
       }
@@ -118,7 +123,6 @@ public class FactionTop : ChatBot{
       var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
       LogToConsole(httpResponse);
       //Reset and unload script
-      // _factionIndex = 0;
       UnloadBot();
     }
   }
