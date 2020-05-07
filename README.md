@@ -14,7 +14,7 @@ Follow these steps and you will be well on your way
 
 ##### 1. Download the files from the GitHub repo
 
-##### 2. Place the files in the directory where you run MinecraftClient.exe from; i.e. working directory
+##### 2. Place the files in the directory where you run MinecraftClient.exe from; i.e. working directory, the only files you need are the .cs and .ini files
 
 ##### 3. Make sure [ScriptScheduler] is enabled in MinecraftClient.ini
 
