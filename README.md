@@ -96,4 +96,4 @@ If your account isn't in a realm at the time you specified, it will not post fac
 The script has no way of knowing how many other scripts are also running and sending to the same discord channel. The advantage of this script is on some realms that are very full you will have a higher chance of getting at least one account online that will get faction top for you. If you have 12 accounts in the realm running this script, you might get 12 messages in discord after a reboot.
 
 ## Screenshots
-<img height = 600px src="images/preview.png"> <img height = 600px src="images/preview2.png">
+<img height = 600px src="images/preview.png"> <img height = 600px src="images/preview2.png"> <img height = 600px src="images/preview3.png">
