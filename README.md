@@ -1,9 +1,7 @@
 ## What?
-
 This is a script designed to display faction top information and hoverinfo specifically made for SaicoPvP Realms, I can not guarantee it works for any other servers.
 
 ## Why do I need this?
-
 You're already afking tons of accounts on a realm that you are playing on, why not put them to work? Most mainstream ways players collect faction top information is either screenshotting every reboot and posting it in discord, or laboriously coding a discord bot from scratch that can only utilize one account at a time. This script is super lightweight and works for an unlimited number of accounts.
 
 ## Why should I trust you that this ain't a rat?
@@ -56,6 +54,39 @@ Follow these steps and you will be well on your way
 	enabled=true
 	webhook=PASTE_WEBHOOK_URL_HERE
 
+## Advanced Settings
+There are several advanced settings in the factiontop.ini file
+##### Formatting
+You are able to edit how the message is formatted in discord
+
+	formatting=> {rank} - **{name}** `{value}` +{change}\n> **Spawner:** `{spawners}` - {placed}/{stored}
+
+An example would be, if you only wanted to display total and spawner values you could do
+
+	formatting=> {rank} - **{name}** {value}\n> **Spawner Value:** {spawners}
+
+Below is a list of all available variables and an example of what it would look like
+| formatting code | example |
+| ------ | ------ |
+| {rank} | #1 |
+| {name} | NemoOP |
+| {value} |  $27,559,029,653 |
+| {change} | ▲116.8% |
+| {spawners} | $25,988,156,093 |
+| {placed} | 74,386 |
+| {stored} | 1,593 |
+| \n | newline |
+
+##### Emojis
+You are able to edit the emojis shown for first, second, and third place
+
+	1=:first_place:
+	2=:second_place:
+	3=:third_place:
+If you want to remove the emojis and use only the numbers, replace the emoji shortcodes with #1, #2, #3
+
+Examples are below in the screenshots section
+
 ## Troubleshooting
 ###### I set everything up correctly but my discord channel didnt get a message!
 If your account isn't in a realm at the time you specified, it will not post faction top data in your discord. If you want to manually do so, enter the realm and type "/script factiontop.cs" and it will collect the data and post it to your discord webhook.
@@ -64,4 +95,4 @@ If your account isn't in a realm at the time you specified, it will not post fac
 The script has no way of knowing how many other scripts are also running and sending to the same discord channel. The advantage of this script is on some realms that are very full you will have a higher chance of getting at least one account online that will get faction top for you. If you have 12 accounts in the realm running this script, you might get 12 messages in discord after a reboot.
 
 ## Screenshots
-<img src="images/preview.png">
+<img height = 600px src="images/preview.png"> <img height = 600px src="images/preview2.png">
