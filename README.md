@@ -76,7 +76,6 @@ Below is a list of all available variables and an example of what it would look 
 | {spawners} | $25,988,156,093 |
 | {placed} | 74,386 |
 | {stored} | 1,593 |
-| \n | newline |
 
 ##### Emojis
 You are able to edit the emojis shown for first, second, and third place
