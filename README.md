@@ -57,9 +57,9 @@ Follow these steps and you will be well on your way
 ## Advanced Settings
 There are several advanced settings in the factiontop.ini file
 ##### Formatting
-You are able to edit how the message is formatted in discord
+You are able to edit how the message is formatted in discord, you can use any discord supported markdown
 
-	formatting=> {rank} - **{name}** `{value}` +{change}\n> **Spawner:** `{spawners}` - {placed}/{stored}
+	formatting=> {rank} - **{name}** `{value}` {change}\n> **Spawner:** `{spawners}` - {placed}/{stored}
 
 An example would be, if you only wanted to display total and spawner values you could do
 
