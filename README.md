@@ -89,6 +89,9 @@ If you want to remove the emojis and use only the numbers, replace the emoji sho
 Examples are below in the screenshots section
 
 ## Troubleshooting
+###### I get an error that looks like this "System.InvalidOperationException"
+The script was designed around build 275 of [Minecraft Console Client](https://github.com/ORelio/Minecraft-Console-Client), if you use an older version of MCC you may not have all the features that this script take advantage of. Download and run the latest version of MCC to fix this.
+
 ###### I set everything up correctly but my discord channel didnt get a message!
 If your account isn't in a realm at the time you specified, it will not post faction top data in your discord. If you want to manually do so, enter the realm and type "/script factiontop.cs" and it will collect the data and post it to your discord webhook.
 
