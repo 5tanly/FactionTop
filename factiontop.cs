@@ -48,6 +48,22 @@ public class FactionTop : ChatBot{
     }
   }
 
+  void SendHttpPostAsync(string uri, string text){
+    new Thread(() => {
+        var request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(uri);
+        request.ContentType = "application/json";
+        request.Method = "POST";
+        using (var streamWriter = new StreamWriter(request.GetRequestStream()))
+            streamWriter.Write(text);
+        var response = (System.Net.HttpWebResponse)request.GetResponse();
+        string responseString;
+        using (var stream = response.GetResponseStream())
+        using (var reader = new StreamReader(stream))
+            responseString = reader.ReadToEnd();
+        LogToConsole(responseString);
+    }).Start();
+}
+
   public override void GetText(string text, string jsontext){
     text = GetVerbatim(text);
     for (int i = 1; i < 11; i++){
@@ -121,16 +137,9 @@ public class FactionTop : ChatBot{
       int color = 12745742;
 
       //POST data to discord
-      var httpWebRequest = (HttpWebRequest)WebRequest.Create(webhook);
-      httpWebRequest.ContentType = "application/json";
-      httpWebRequest.Method = "POST";
-      using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream())){
-        string factionTop = _factionTop[1]+_factionTop[2]+_factionTop[3]+_factionTop[4]+_factionTop[5]+_factionTop[6]+_factionTop[7]+_factionTop[8]+_factionTop[9]+_factionTop[10];
-        string json = "{\"embeds\": [{\"title\": \""+title+"\",\"description\": \""+factionTop+"\",\"color\": "+color+",\"author\": {\"name\": \""+ign+"\",\"icon_url\": \"https://crafatar.com/avatars/"+uuid+"\"},\"footer\": {\"text\": \""+footer+"\",\"icon_url\": \""+footerIcon+"\"}}],\"username\": \""+botName+"\",\"avatar_url\": \""+botIcon+"\"}";
-        streamWriter.Write(json);
-      }
-      var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-      LogToConsole(httpResponse);
+      string factionTop = _factionTop[1]+_factionTop[2]+_factionTop[3]+_factionTop[4]+_factionTop[5]+_factionTop[6]+_factionTop[7]+_factionTop[8]+_factionTop[9]+_factionTop[10];
+      string json = "{\"embeds\": [{\"title\": \""+title+"\",\"description\": \""+factionTop+"\",\"color\": "+color+",\"author\": {\"name\": \""+ign+"\",\"icon_url\": \"https://crafatar.com/avatars/"+uuid+"\"},\"footer\": {\"text\": \""+footer+"\",\"icon_url\": \""+footerIcon+"\"}}],\"username\": \""+botName+"\",\"avatar_url\": \""+botIcon+"\"}";
+      SendHttpPostAsync(webhook, json);
 
       //Reset and unload script
       UnloadBot();
