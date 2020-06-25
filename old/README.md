@@ -57,7 +57,7 @@ Follow these steps and you will be well on your way
 	[FactionTop]
 	enabled=true
 	webhook=PASTE_WEBHOOK_URL_HERE
-
+	
 ##### 8.1 A proper factiontop.ini should look like this:
 
 	[FactionTop]
@@ -69,11 +69,11 @@ There are several advanced settings in the factiontop.ini file
 ##### Formatting
 You are able to edit how the message is formatted in discord, you can use any discord supported markdown
 
-	formatting=> {rank} - **{name}** `{overallValue}` {changePercent}\n> **Spawner:** `{spawnerValue}` - {spawnerPlaced}/{spawnerStored}
+	formatting=> {rank} - **{name}** `{value}` {change}\n> **Spawner:** `{spawners}` - {placed}/{stored}
 
 An example would be, if you only wanted to display total and spawner values you could do
 
-	formatting=> {rank} - **{name}** {overallValue}\n> **Spawner Value:** {spawnerValue}
+	formatting=> {rank} - **{name}** {value}\n> **Spawner Value:** {spawners}
 
 Below is a list of all available variables and an example of what it would look like
 | formatting code | example |
@@ -81,18 +81,12 @@ Below is a list of all available variables and an example of what it would look 
 | {rank} | #1 |
 | {name} | NemoOP |
 | {leader} | defier_ |
-| {overallValue} |  $27,559,029,653 |
-| {spawnerValue} |  $115.795M |
-| {spawnerPlaced} | 74,386 |
-| {spawnerStored} | 1,593 |
-| {hopperValue} | $75,000 |
-| {changePercent} | ▲16.8% |
-| {changeOverallValue} | $635.834M |
-| {changeSpawnerValue} | $83.822M |
-| {changeSpawnerPlaced} | 114 |
-| {changeSpawnerStored} | 34 |
-| {changeHopperValue} | %25,000 |
-| {factionUUID} | 01424db3-9bfd-4d8d-bd87-299d409c5c24 |
+| {value} |  $27,559,029,653 |
+| {change} | ▲116.8% |
+| {spawners} | $25,988,156,093 |
+| {placed} | 74,386 |
+| {stored} | 1,593 |
+| {uuid} | 01424db3-9bfd-4d8d-bd87-299d409c5c24 |
 
 ##### Emojis
 You are able to edit the emojis shown for first, second, and third place
@@ -103,11 +97,6 @@ You are able to edit the emojis shown for first, second, and third place
 If you want to remove the emojis and use only the numbers, replace the emoji shortcodes with #1, #2, #3
 
 Examples are below in the screenshots section
-
-##### Usage Statistics
-Usage statistics are enabled by default and are used to estimate how many users are running the script every day, you can disable it in factiontop.ini by changing this line to false
-
-	usagestatistics=true
 
 ## Troubleshooting
 ###### I get an error that looks like this "System.InvalidOperationException"
