@@ -18,7 +18,7 @@ public class FactionTop : ChatBot{
 
   public void GetSettings(){
     //Get user defined settings from factiontop.ini
-    string[] Lines = File.ReadAllLines(@"ft.ini");
+    string[] Lines = File.ReadAllLines(@"factiontop.ini");
     enabled = Lines[1].Remove(0,8).ToLower();
     webhook = Lines[2].Remove(0,8);
 
